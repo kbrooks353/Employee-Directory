@@ -1,27 +1,25 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 
-function EmployeeCard({ users }) {
-
-    users.map(({ name, picture, phone, email, dob }) => {
+function EmployeeCard(props) {
         return (
-            <Card>
-                <Card.Img variant="top" src={picture.medium} />
+            <Card style={{ width: '18rem' }}>
+                <Card.Img variant="top" src={props.image} />
                 <Card.Body>
-                <Card.Title>{name.first} {name.last}</Card.Title>
+                <Card.Title>{props.first} {props.last}</Card.Title>
                     <Card.Text>
-                        {email}
+                        Email: {props.email}
                 </Card.Text>
                     <Card.Text>
-                        {dob}
+                        Age: {props.dob}
                 </Card.Text>
                     <Card.Text>
-                        {phone}
+                        Phone #: {props.phone}
                 </Card.Text>
                 </Card.Body>
             </Card>
         )
-    })
+   
     }
 
 
